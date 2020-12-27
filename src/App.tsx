@@ -5,6 +5,8 @@ import { MnMProvider } from '@mnm-tech/provider';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import 'App.scss';
+
 /* App context */
 export const AppContext = createContext({
   userProfileImage: '',
@@ -20,12 +22,19 @@ const App = () => {
   return (
     <MnMProvider>
       <React.Suspense fallback={<LinearProgress />}>
-        <ErrorBoundary key="child-app-1">
-          <ChildApp1 />
-        </ErrorBoundary>
-        <ErrorBoundary>
-          <ChildApp2 key="child-app-2" />
-        </ErrorBoundary>
+        <div className="mfe-container">
+          <span className="mfe-container__heading">Container APP</span>
+          <div className="mfe-container__child-1">
+            <ErrorBoundary key="child-app-1">
+              <ChildApp1 />
+            </ErrorBoundary>
+          </div>
+          <div className="mfe-container__child-2">
+            <ErrorBoundary key="child-app-2">
+              <ChildApp2 />
+            </ErrorBoundary>
+          </div>
+        </div>
       </React.Suspense>
     </MnMProvider>
   );

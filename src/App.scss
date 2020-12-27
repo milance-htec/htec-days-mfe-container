@@ -1,0 +1,28 @@
+.mfe-container {
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  height: 900px;
+}
+
+.mfe-container__heading {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.mfe-container__child-1 {
+  border: 1px black solid;
+  height: 700px;
+  width: 40%;
+  margin: 10px;
+}
+
+.mfe-container__child-2 {
+  border: 1px black solid;
+  height: 700px;
+  width: 40%;
+  margin: 10px;
+}
