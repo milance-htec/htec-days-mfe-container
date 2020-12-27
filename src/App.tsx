@@ -17,6 +17,8 @@ export const AppContext = createContext({
 const ChildApp1 = React.lazy(() => import('mnmMfeChildApp1/App'));
 //@ts-ignore
 const ChildApp2 = React.lazy(() => import('mnmMfeChildApp2/App'));
+//@ts-ignore
+const Image = React.lazy(() => import('mnmMfeChildApp2/components/Image'));
 
 const App = () => {
   return (
@@ -24,8 +26,14 @@ const App = () => {
       <React.Suspense fallback={<LinearProgress />}>
         <div className="mfe-container">
           <span className="mfe-container__heading">Container APP</span>
-          <img className="mfe-container__logo" src="./assets/logo.png"></img>
-          <img className="mfe-container__company-logo" src="./assets/htec-logo.png"></img>
+          <ErrorBoundary key="image-component">
+            <div className="mfe-container__logo">
+              <Image src="./assets/logo.png" />
+            </div>
+            <div className="mfe-container__company-logo">
+              <Image src="./assets/htec-logo.png" />
+            </div>
+          </ErrorBoundary>
           <div className="mfe-container__child-1">
             <ErrorBoundary key="child-app-1">
               <ChildApp1 />
