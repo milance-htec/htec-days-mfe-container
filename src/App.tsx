@@ -24,6 +24,8 @@ const App = () => {
       <React.Suspense fallback={<LinearProgress />}>
         <div className="mfe-container">
           <span className="mfe-container__heading">Container APP</span>
+          <img className="mfe-container__logo" src="./assets/logo.png"></img>
+          <img className="mfe-container__company-logo" src="./assets/htec-logo.png"></img>
           <div className="mfe-container__child-1">
             <ErrorBoundary key="child-app-1">
               <ChildApp1 />
