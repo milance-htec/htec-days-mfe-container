@@ -1,17 +1,11 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { LinearProgress } from '@material-ui/core';
 import ErrorBoundary from 'components/error-boundary';
-import { MnMProvider, useMnM } from '@mnm-tech/provider';
+import { useMnM } from '@mnm-tech/provider';
 
 import 'react-toastify/dist/ReactToastify.css';
 
 import 'App.scss';
-
-/* App context */
-export const AppContext = createContext({
-  userProfileImage: '',
-  setUserProfileImage: (userProfileImage: string) => {},
-});
 
 //@ts-ignore
 const ChildApp1 = React.lazy(() => import('mnmMfeChildApp1/App'));
