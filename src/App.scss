@@ -8,9 +8,14 @@
 }
 
 .mfe-container__heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 22px;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 0;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mfe-container__child-1 {
